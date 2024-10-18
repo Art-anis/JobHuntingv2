@@ -8,4 +8,7 @@
     <string name="file_name">мок json.json</string>
     <string name="search_placeholder">Должность, ключевые слова</string>
     <string name="advanced_search_placeholder">Должность по подходящим вакансиям</string>
+    <string name="near_vacancies">near_vacancies</string>
+    <string name="level_up_resume">level_up_resume</string>
+    <string name="temporary_job">temporary_job</string>
 </resources>

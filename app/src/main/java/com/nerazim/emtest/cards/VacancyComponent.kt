@@ -10,11 +10,11 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Button
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.nerazim.emtest.R
@@ -22,21 +22,23 @@ import com.nerazim.emtest.domain.models.Vacancy
 import com.nerazim.emtest.viewmodels.FavoriteNumberViewModel
 import org.koin.androidx.compose.koinViewModel
 
+//карточка вакансии
 @Composable
 fun VacancyComponent(
-    vacancy: Vacancy,
-    addToFavorites: (Vacancy) -> Unit = {},
-    removeFromFavorites: (Vacancy) -> Unit
+    vacancy: Vacancy, //вакансия
+    addToFavorites: (Vacancy) -> Unit = {}, //функция добавления в избранное
+    removeFromFavorites: (Vacancy) -> Unit //функция удаления из избранного
 ) {
+
+    //viewmodel
     val favoriteNumberViewModel = koinViewModel<FavoriteNumberViewModel>()
 
     Surface(
-        color = Color(0xFF222325),
+        color = MaterialTheme.colorScheme.onSurface,
         modifier = Modifier
             .fillMaxWidth()
-            .clickable {
-
-    }) {
+            .clickable {}
+    ) {
         Row {
             Column(modifier =
             Modifier
