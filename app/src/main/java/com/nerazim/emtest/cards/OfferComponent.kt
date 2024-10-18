@@ -17,11 +17,11 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.nerazim.emtest.R
-import com.nerazim.emtest.domain.Offer
+import com.nerazim.emtest.domain.models.Offer
 
 //блок рекомендации
 @Composable
-fun OfferComponent(offer: com.nerazim.emtest.domain.Offer) {
+fun OfferComponent(offer: Offer) {
     val context = LocalContext.current
 
     Surface(

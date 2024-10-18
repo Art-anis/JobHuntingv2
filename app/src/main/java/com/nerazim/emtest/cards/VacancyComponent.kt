@@ -17,19 +17,18 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import androidx.lifecycle.viewmodel.compose.viewModel
 import com.nerazim.emtest.R
-import com.nerazim.emtest.domain.Vacancy
+import com.nerazim.emtest.domain.models.Vacancy
 import com.nerazim.emtest.viewmodels.FavoriteNumberViewModel
-import com.nerazim.emtest.viewmodels.ViewModelFactory
+import org.koin.androidx.compose.koinViewModel
 
 @Composable
 fun VacancyComponent(
-    vacancy: com.nerazim.emtest.domain.Vacancy,
-    addToFavorites: (com.nerazim.emtest.domain.Vacancy) -> Unit = {},
-    removeFromFavorites: (com.nerazim.emtest.domain.Vacancy) -> Unit
+    vacancy: Vacancy,
+    addToFavorites: (Vacancy) -> Unit = {},
+    removeFromFavorites: (Vacancy) -> Unit
 ) {
-    val favoriteNumberViewModel: FavoriteNumberViewModel = viewModel(factory = ViewModelFactory.Factory)
+    val favoriteNumberViewModel = koinViewModel<FavoriteNumberViewModel>()
 
     Surface(
         color = Color(0xFF222325),

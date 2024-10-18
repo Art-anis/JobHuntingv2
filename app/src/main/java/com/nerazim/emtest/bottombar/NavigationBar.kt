@@ -21,10 +21,9 @@ import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role.Companion.Tab
-import androidx.lifecycle.viewmodel.compose.viewModel
 import com.nerazim.emtest.R
 import com.nerazim.emtest.viewmodels.FavoriteNumberViewModel
-import com.nerazim.emtest.viewmodels.ViewModelFactory
+import org.koin.androidx.compose.koinViewModel
 
 //нижний бар, он же навигация
 @Composable
@@ -74,7 +73,7 @@ fun JobBottomBarItem(
         horizontalAlignment = Alignment.CenterHorizontally //выравнивание по центру
     ) {
         if (text == stringResource(R.string.favorite)) {
-            val viewModel: FavoriteNumberViewModel = viewModel(factory = ViewModelFactory.Factory)
+            val viewModel = koinViewModel<FavoriteNumberViewModel>()
             val favoriteNumber by viewModel.getFavoritesNumber().observeAsState()
 
             BadgedBox(badge = {

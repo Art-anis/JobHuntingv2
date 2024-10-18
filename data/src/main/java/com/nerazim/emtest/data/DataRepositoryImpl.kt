@@ -2,13 +2,23 @@ package com.nerazim.emtest.data
 
 import android.content.Context
 import com.google.gson.Gson
-import com.nerazim.emtest.domain.Data
+import com.nerazim.emtest.domain.models.Data
+import com.nerazim.emtest.domain.models.Offer
+import com.nerazim.emtest.domain.models.Vacancy
+import com.nerazim.emtest.domain.repository.DataRepository
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.launch
 
-class DataRepositoryImpl(private val apiHelper: ApiHelper):
-    com.nerazim.emtest.domain.DataRepository {
+class DataRepositoryImpl(private val apiHelper: ApiHelper, context: Context): DataRepository {
+    private var data = Data()
 
-    var data: Data = Data()
+    init {
+        CoroutineScope(Dispatchers.IO).launch {
+            loadData(context)
+        }
+    }
 
     override suspend fun loadData(context: Context) {
         data = coroutineScope {
@@ -24,15 +34,15 @@ class DataRepositoryImpl(private val apiHelper: ApiHelper):
         }
     }
 
-    override fun getOffers(): List<com.nerazim.emtest.domain.Offer> {
+    override fun getOffers(): List<Offer> {
         return data.offers
     }
 
-    override fun getVacancies(): List<com.nerazim.emtest.domain.Vacancy> {
+    override fun getVacancies(): List<Vacancy> {
         return data.vacancies
     }
 
-    override fun getFavorites(): List<com.nerazim.emtest.domain.Vacancy> {
+    override fun getFavorites(): List<Vacancy> {
         return data.vacancies.filter { it.isFavorite == true }
     }
 
@@ -41,12 +51,12 @@ class DataRepositoryImpl(private val apiHelper: ApiHelper):
         return data.favoriteNumber
     }
 
-    override fun addFavorite(vacancy: com.nerazim.emtest.domain.Vacancy) {
+    override fun addFavorite(vacancy: Vacancy) {
         data.vacancies.find { it == vacancy }?.isFavorite = true
         data.favoriteNumber += 1
     }
 
-    override fun removeFavorite(vacancy: com.nerazim.emtest.domain.Vacancy) {
+    override fun removeFavorite(vacancy: Vacancy) {
         data.vacancies.find { it == vacancy }?.isFavorite = false
         data.favoriteNumber -= 1
     }

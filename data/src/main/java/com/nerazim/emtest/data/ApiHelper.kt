@@ -1,7 +1,7 @@
 package com.nerazim.emtest.data
 
-import com.nerazim.emtest.domain.DataApi
+import com.nerazim.emtest.domain.models.DataApi
 
-class ApiHelper(private val dataApi: com.nerazim.emtest.domain.DataApi) {
+class ApiHelper(private val dataApi: DataApi) {
     suspend fun getData() = dataApi.getData()
 }

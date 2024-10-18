@@ -1,24 +1,4 @@
-package com.nerazim.emtest.domain
-
-//общий объект, получаемый из JSON
-data class Data(
-    val offers: List<Offer> = listOf(), //список рекомендаций
-    val vacancies: List<Vacancy> = listOf(), //список вакансий
-    var favoriteNumber: Int = 0 //количество вакансий в "Избранном"
-)
-
-//рекомендации
-data class Offer(
-    val id: String? = null, //идентификатор
-    val title: String? = null, //название
-    val button: OfferButton? = null, //кнопка
-    val link: String? = null //ссылка
-)
-
-//кнопка в блоке рекомендации
-data class OfferButton(
-    val text: String
-)
+package com.nerazim.emtest.domain.models
 
 //вакансия
 data class Vacancy(

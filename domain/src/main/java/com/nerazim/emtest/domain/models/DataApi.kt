@@ -1,4 +1,4 @@
-package com.nerazim.emtest.domain
+package com.nerazim.emtest.domain.models
 
 import retrofit2.http.GET
 

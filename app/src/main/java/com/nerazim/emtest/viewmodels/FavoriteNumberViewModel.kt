@@ -3,9 +3,9 @@ package com.nerazim.emtest.viewmodels
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.nerazim.emtest.domain.GetFavoritesNumberUseCase
+import com.nerazim.emtest.domain.usecases.GetFavoritesNumberUseCase
 
-class FavoriteNumberViewModel(private val getFavoritesNumberUseCase: com.nerazim.emtest.domain.GetFavoritesNumberUseCase
+class FavoriteNumberViewModel(private val getFavoritesNumberUseCase: GetFavoritesNumberUseCase
 ): ViewModel() {
 
     private val favoritesNumberLiveMutable = MutableLiveData<Int>()

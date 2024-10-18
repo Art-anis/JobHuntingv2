@@ -8,14 +8,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Modifier
-import androidx.lifecycle.viewmodel.compose.viewModel
 import com.nerazim.emtest.cards.VacancyComponent
-import com.nerazim.emtest.viewmodels.ViewModelFactory
 import com.nerazim.emtest.viewmodels.FavoritesViewModel
+import org.koin.androidx.compose.koinViewModel
 
 @Composable
 fun FavoritesScreen() {
-    val viewModel: FavoritesViewModel = viewModel(factory = ViewModelFactory.Factory)
+    val viewModel = koinViewModel<FavoritesViewModel>()
 
     val favorites by viewModel.getFavoritesListLive().observeAsState(listOf())
 

@@ -1,6 +1,6 @@
 package com.nerazim.emtest.data
 
-import com.nerazim.emtest.domain.DataApi
+import com.nerazim.emtest.domain.models.DataApi
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -14,5 +14,5 @@ class RetrofitBuilder {
             .build()
     }
 
-    val dataApi: com.nerazim.emtest.domain.DataApi = getRetrofit().create(com.nerazim.emtest.domain.DataApi::class.java)
+    val dataApi: DataApi = getRetrofit().create(DataApi::class.java)
 }

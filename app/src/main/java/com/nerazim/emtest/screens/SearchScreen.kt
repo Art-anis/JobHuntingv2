@@ -31,16 +31,15 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import androidx.lifecycle.viewmodel.compose.viewModel
 import com.nerazim.emtest.R
 import com.nerazim.emtest.cards.OfferComponent
 import com.nerazim.emtest.cards.VacancyComponent
 import com.nerazim.emtest.viewmodels.SearchViewModel
-import com.nerazim.emtest.viewmodels.ViewModelFactory
+import org.koin.androidx.compose.koinViewModel
 
 @Composable
 fun SearchScreen() {
-    val viewModel: SearchViewModel = viewModel(factory = ViewModelFactory.Factory)
+    val viewModel = koinViewModel<SearchViewModel>()
 
     val offers by viewModel.getOfferListLive().observeAsState(listOf())
     val vacancies by viewModel.getVacancyListLive().observeAsState(listOf())

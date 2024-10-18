@@ -26,8 +26,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             EMTestTheme {
                 //переменная состояния, отслеживающая текущий экран
-                var currentScreen: BottomBarDestination by remember { mutableStateOf(
-                    BottomBarDestination.Search) }
+                var currentScreen: BottomBarDestination by remember { mutableStateOf(BottomBarDestination.Search) }
 
                 Scaffold(
                     modifier = Modifier.fillMaxSize(),
