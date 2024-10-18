@@ -8,6 +8,7 @@ private val DarkColorScheme = darkColorScheme(
     primary = Green,
     secondary = PurpleGrey80,
     tertiary = Pink80,
+    surfaceContainer = Shadows,
     onSurface = Grey
 )
 

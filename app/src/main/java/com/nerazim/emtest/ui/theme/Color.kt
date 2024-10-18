@@ -8,3 +8,5 @@ val Pink80 = Color(0xFFEFB8C8)
 
 val Grey = Color(0xFF222325)
 val Green = Color(0xFF4CB24E)
+val Shadows = Color(0xFF0C0C0C)
+val Grey3 = Color(0xFF858688)
