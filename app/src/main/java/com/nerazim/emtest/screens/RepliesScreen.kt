@@ -8,6 +8,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 
+//экран откликов - заглушка
 @Composable
 fun RepliesScreen() {
     Surface(Modifier.fillMaxSize()) {

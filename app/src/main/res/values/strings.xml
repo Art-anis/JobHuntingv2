@@ -12,4 +12,8 @@
     <string name="level_up_resume">level_up_resume</string>
     <string name="temporary_job">temporary_job</string>
     <string name="reply">Откликнуться</string>
+    <string name="filter_description">filter</string>
+    <string name="search_headline">Вакансии для Вас</string>
+    <string name="advanced_search_filter">По соответствию</string>
+    <string name="advanced_search_description">Сортировка по соответствию</string>
 </resources>

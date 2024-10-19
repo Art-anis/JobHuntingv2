@@ -15,7 +15,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.nerazim.emtest.R
@@ -51,7 +50,7 @@ fun FavoritesScreen() {
             Text(
                 text = "${favorites.size} $declension",
                 style = MaterialTheme.typography.bodyMedium,
-                color = Color(0xFF858688)
+                color = MaterialTheme.colorScheme.tertiary
             )
             Spacer(modifier = Modifier.height(16.dp))
             //столбец с вакансиями

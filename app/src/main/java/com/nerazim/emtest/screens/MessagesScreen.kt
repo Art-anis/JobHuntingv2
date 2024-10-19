@@ -8,6 +8,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 
+//экран сообщений - заглушка
 @Composable
 fun MessagesScreen() {
     Surface(Modifier.fillMaxSize()) {

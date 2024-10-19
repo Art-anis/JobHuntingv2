@@ -6,6 +6,7 @@ import com.nerazim.emtest.viewmodels.SearchViewModel
 import org.koin.core.module.dsl.viewModel
 import org.koin.dsl.module
 
+//модуль app - все viewmodel
 val appModule = module {
 
     //viewmodel по количеству вакансий в избранном
