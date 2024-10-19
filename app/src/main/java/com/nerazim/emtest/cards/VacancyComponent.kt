@@ -176,8 +176,8 @@ fun VacancyComponent(
             //кнопка "Откликнуться"
             Button(
                 modifier = Modifier
-                    .padding(horizontal = 16.dp)
-                    .fillMaxWidth(),
+                    .fillMaxWidth()
+                    .clip(RoundedCornerShape(50.dp)),
                 onClick = {}
             ) {
                 Text(
