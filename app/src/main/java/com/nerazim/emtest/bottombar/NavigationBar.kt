@@ -87,7 +87,12 @@ fun JobBottomBarItem(
                             containerColor = MaterialTheme.colorScheme.onSecondary,
                             contentColor = MaterialTheme.colorScheme.onSecondaryContainer
                         ) {
-                            Text("$it")
+                            //текст с количеством вакансий в избранном
+                            Text(
+                                text = "$it",
+                                style = MaterialTheme.typography.labelSmall,
+                                color = MaterialTheme.colorScheme.onSecondaryContainer
+                            )
                         }
                     }
                 }

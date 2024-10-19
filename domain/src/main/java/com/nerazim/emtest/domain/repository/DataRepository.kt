@@ -7,20 +7,24 @@ import com.nerazim.emtest.domain.models.Vacancy
 //репозиторий, в котором будут храниться данные
 interface DataRepository {
 
-    //загрузка данных в виде JSON-файла и его десериализация
+    //загрузка данных
     suspend fun loadData(context: Context)
 
-    //выделение списка рекомендаций
+    //получение рекомендаций
     fun getOffers(): List<Offer>
 
-    //выделение списка вакансий
+    //получение вакансий
     fun getVacancies(): List<Vacancy>
 
+    //получение вакансий в избранном
     fun getFavorites(): List<Vacancy>
 
+    //получение количества вакансий в избранном
     fun getFavoritesNumber(): Int
 
+    //добавить вакансию в избранное
     fun addFavorite(vacancy: Vacancy)
 
+    //удалить вакансию из избранного
     fun removeFavorite(vacancy: Vacancy)
 }
