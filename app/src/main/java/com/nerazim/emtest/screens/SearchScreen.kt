@@ -59,6 +59,7 @@ fun SearchScreen() {
     Surface(Modifier.fillMaxSize()) {
         //столбец, в котором находятся все элементы
         Column {
+            Spacer(modifier = Modifier.height(16.dp))
             //ряд с поиском и кнопкой фильтра
             Row(
                 modifier = Modifier

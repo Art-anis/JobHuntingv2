@@ -1,5 +1,6 @@
 package com.nerazim.emtest.cards
 
+import android.content.Intent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -18,10 +19,12 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.nerazim.emtest.R
+import com.nerazim.emtest.VacancyActivity
 import com.nerazim.emtest.domain.models.Vacancy
 import com.nerazim.emtest.viewmodels.FavoriteNumberViewModel
 import org.koin.androidx.compose.koinViewModel
@@ -37,13 +40,17 @@ fun VacancyComponent(
     //viewmodel
     val favoriteNumberViewModel = koinViewModel<FavoriteNumberViewModel>()
 
+    val context = LocalContext.current
     //поверхность
     Surface(
         color = MaterialTheme.colorScheme.onSurface,
         modifier = Modifier
             .fillMaxWidth() //заполняем всю ширину
             .clip(shape = RoundedCornerShape(8.dp)) //скругленные края
-            .clickable {} //делаем кликабельной, переход на заглушку
+            .clickable {
+                val i = Intent(context, VacancyActivity::class.java)
+                context.startActivity(i)
+            } //делаем кликабельной, переход на заглушку
     ) {
         //столбец, в котором находятся все элементы
         Column(
