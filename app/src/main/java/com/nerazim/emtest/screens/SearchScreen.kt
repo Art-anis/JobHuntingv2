@@ -34,6 +34,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import com.nerazim.emtest.R
@@ -76,11 +77,11 @@ fun SearchScreen() {
                     modifier = Modifier
                         .clip(RoundedCornerShape(8.dp))
                         .weight(0.85f, true),
+                    textStyle = TextStyle(color = MaterialTheme.colorScheme.onSecondaryContainer),
                     //устанавливаем цвета
                     colors = TextFieldDefaults.colors(
                         unfocusedContainerColor = MaterialTheme.colorScheme.secondary,
                         unfocusedIndicatorColor = MaterialTheme.colorScheme.secondary,
-
                     ),
                     value = search,
                     onValueChange = { value -> search = value },
